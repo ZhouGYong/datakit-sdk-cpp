@@ -1,6 +1,0 @@
-{
-    "name": "datakit-sdk-cpp",
-    "version": "0.7.5",
-    "description": "A C++ library to collect RUM/Log/Trace data to datakit agent",
-    "homepage": "https://github.com/ZhouGYong/datakit-sdk-cpp"
-  }
