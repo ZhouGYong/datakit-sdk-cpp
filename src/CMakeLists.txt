@@ -22,6 +22,7 @@ if(UNIX)
   message(UNIX "CMAKE_CXX_FLAGS:" ${CMAKE_CXX_FLAGS})
 
 elseif(WIN32)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++17")
   add_definitions(-D_WINDOWS)
   add_definitions(-D_WIN32_WINNT=0x0600)
   add_definitions(-D_CRT_SECURE_NO_WARNINGS)
