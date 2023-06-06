@@ -72,7 +72,7 @@ if (CMAKE_CROSSCOMPILING)
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 endif()
 
-if (DEFINED ENV{BUILD_FROM_VCPKG})
+if (WIN32)
 add_subdirectory(datakit-sdk-cpp/ft-sdk)
 else ()
 add_subdirectory(datakit-sdk-cpp/ft-sdk)
