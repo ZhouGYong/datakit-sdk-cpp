@@ -22,6 +22,7 @@ namespace com::ft::sdk::internal
     const std::int64_t MAX_RESTING_TIME = 900000000000;
     const std::int64_t SESSION_EXPIRE_TIME = 14400000000000;
     const int FILTER_CAPACITY = 5;
+    const int ACTION_TIMEOUT = 5;
 
     void RUMManager::clear()
     {
@@ -169,12 +170,7 @@ namespace com::ft::sdk::internal
         if (m_pActiveAction == nullptr || m_pActiveAction->isClose()) {
             initAction(actionName, actionType);
 
-            // to generate the properties
-            //initSumAction();
-            //mHandler.removeCallbacks(mActionRecheckRunner);
-            //mHandler.postDelayed(mActionRecheckRunner, 5000);
-
-            // TODO: check action close in 5 seconds
+            new std::thread(&RUMManager::checkForActionTimeout, this);
         }
     }
 
@@ -967,5 +963,19 @@ namespace com::ft::sdk::internal
         }
 
         CacheDBManager::getInstance().updateRUMCollect(collect);
+    }
+
+    void RUMManager::checkForActionTimeout()
+    {
+        try
+        {
+            std::this_thread::sleep_for(std::chrono::seconds(ACTION_TIMEOUT));
+            checkActionClose();
+        }
+        catch (const std::exception& ex)
+        {
+            std::string err = "Exception in checkForActionTimeout : ";
+            internal::LoggerManager::getInstance().logError(err.append(ex.what()));
+        }
     }
 }

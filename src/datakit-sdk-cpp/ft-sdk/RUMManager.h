@@ -79,6 +79,7 @@ namespace com::ft::sdk::internal
 
         bool checkSessionWillCollect(std::string sessionId);
         void checkSessionKeep();
+        void checkForActionTimeout();
     private:
         std::map<std::string, bool> m_mapCollectStatus;
         RUMView* m_pActiveView = nullptr;
