@@ -1,0 +1,10 @@
+{
+  "general_config": {
+    "application_uuid": "9753a307-f514-44ba-81f5-9330ef79e0cf",
+    "enable_sdk_log": true
+  },
+  "http_config": {
+    "username": "user1",
+    "password": "password"
+  }
+}

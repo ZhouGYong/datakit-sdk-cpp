@@ -1,0 +1,10 @@
+{
+  "registries": [
+    {
+      "kind": "git",
+      "repository": "https://github.com/ZhouGYong/vcpkg-registry",
+      "packages": [ "datakit-sdk-cpp" ],
+      "baseline": "6a4e92d8468da10a2bc5285f8951ca779a2d60a6"
+    }
+  ]
+}

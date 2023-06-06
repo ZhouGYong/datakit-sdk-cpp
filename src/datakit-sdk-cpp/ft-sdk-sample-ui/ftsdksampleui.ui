@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ftsdksampleuiClass</class>
+ <widget class="QMainWindow" name="ftsdksampleuiClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>381</width>
+    <height>471</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Datakit SDK 测试界面</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>341</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>RUM</string>
+    </property>
+    <widget class="QRadioButton" name="firstViewBtn">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>First View</string>
+     </property>
+     <property name="autoExclusive">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="secondViewBtn">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>20</y>
+       <width>98</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Second View</string>
+     </property>
+     <property name="autoExclusive">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="thirdViewBtn">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>20</y>
+       <width>98</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Third View</string>
+     </property>
+     <property name="autoExclusive">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="simulateClickBtn">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>61</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>开始操作</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="simulateStuckBtn">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>60</y>
+       <width>71</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>模拟卡顿</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="simulateCrashBtn">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>60</y>
+       <width>71</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>模拟崩溃</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>60</y>
+       <width>75</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>结束操作</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>19</x>
+      <y>189</y>
+      <width>341</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>LOG</string>
+    </property>
+    <widget class="QLineEdit" name="logText">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>301</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>This is a user log for test!</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="simulateLogBtn">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>75</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>模拟日志</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>310</y>
+      <width>341</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>TRACE</string>
+    </property>
+    <widget class="QLineEdit" name="resourceUrl">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>301</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>https://baike.baidu.com/calendar/?param=1</string>
+     </property>
+     <property name="maxLength">
+      <number>32766</number>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_5">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>75</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>模拟资源</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>54</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Datakit:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="datakitUrlText">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>20</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>http://172.25.248.216:9529</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="initBtn">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>20</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>初始化</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>381</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="ftsdksampleui.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>simulateClickBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>ftsdksampleuiClass</receiver>
+   <slot>on_startAction_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>77</x>
+     <y>177</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>88</x>
+     <y>165</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ftsdksampleuiClass</receiver>
+   <slot>on_endAction_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>321</x>
+     <y>177</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>367</x>
+     <y>168</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>firstViewBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>ftsdksampleuiClass</receiver>
+   <slot>on_firstView_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>50</x>
+     <y>144</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>78</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>secondViewBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>ftsdksampleuiClass</receiver>
+   <slot>on_secondView_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>180</x>
+     <y>144</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>35</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>thirdViewBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>ftsdksampleuiClass</receiver>
+   <slot>on_thirdView_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>290</x>
+     <y>144</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>320</x>
+     <y>38</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>simulateStuckBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>ftsdksampleuiClass</receiver>
+   <slot>on_simulateStuck_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>133</x>
+     <y>177</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>31</x>
+     <y>162</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>simulateCrashBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>ftsdksampleuiClass</receiver>
+   <slot>on_simulateCrash_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>245</x>
+     <y>177</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>269</x>
+     <y>164</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>simulateLogBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>ftsdksampleuiClass</receiver>
+   <slot>on_addLog_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>82</x>
+     <y>306</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>10</x>
+     <y>243</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>ftsdksampleuiClass</receiver>
+   <slot>on_simulateResource_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>69</x>
+     <y>427</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>10</x>
+     <y>368</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>initBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>ftsdksampleuiClass</receiver>
+   <slot>on_init_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>336</x>
+     <y>71</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>356</x>
+     <y>92</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>on_startAction_clicked()</slot>
+  <slot>on_endAction_clicked()</slot>
+  <slot>on_firstView_clicked()</slot>
+  <slot>on_secondView_clicked()</slot>
+  <slot>on_thirdView_clicked()</slot>
+  <slot>on_simulateStuck_clicked()</slot>
+  <slot>on_simulateCrash_clicked()</slot>
+  <slot>on_addLog_clicked()</slot>
+  <slot>on_simulateResource_clicked()</slot>
+  <slot>on_init_clicked()</slot>
+ </slots>
+</ui>

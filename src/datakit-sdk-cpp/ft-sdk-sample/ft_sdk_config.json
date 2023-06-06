@@ -1,0 +1,16 @@
+{
+    "general_config": {
+        "application_uuid": "de795742-c3e9-4f8f-a0c3-dfd761a98bd5"
+    },
+    "http_config": {
+        "password": "password",
+        "serverUrl": "http://172.27.240.214:9529",
+        "username": "user1"
+    },
+    "user_config": {
+        "email": "zhougy2009@gmail.com",
+        "extdata": "{\"ft_key\":\"ft_value\"}",
+        "id": "1001",
+        "name": "zgy"
+    }
+}
