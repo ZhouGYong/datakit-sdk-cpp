@@ -43,11 +43,11 @@ message(STATUS "PROJECT_SOURCE_DIR=" ${PROJECT_SOURCE_DIR})
 AUX_SOURCE_DIRECTORY(${PROJECT_SOURCE_DIR} ALL_CPPs)
 
 add_library (${PROJECT_NAME} SHARED  ${ALL_CPPs})
-add_library (${PROJECT_NAME}_static STATIC  ${ALL_CPPs})
-
-set_target_properties(${PROJECT_NAME}_static PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
 
 if(UNIX)
+add_library (${PROJECT_NAME}_static STATIC  ${ALL_CPPs})
+set_target_properties(${PROJECT_NAME}_static PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
+
 add_custom_target(
     auto_gen_app_uuid
     COMMAND /bin/sh ${CMAKE_CURRENT_SOURCE_DIR}/autogen.sh ${CMAKE_CURRENT_SOURCE_DIR}/Include/Datakit_UUID.h
@@ -61,9 +61,12 @@ target_include_directories(${PROJECT_NAME} PRIVATE "/usr/include/")
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Include/)
 
 install(TARGETS ${PROJECT_NAME} DESTINATION ${DIST_DIR}/lib/${ARCHITECTURE}/)
-install(TARGETS ${PROJECT_NAME}_static DESTINATION ${DIST_DIR}/lib/${ARCHITECTURE}/)
 install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Include/ DESTINATION ${DIST_DIR}/include)
+
+if(UNIX)
+install(TARGETS ${PROJECT_NAME}_static DESTINATION ${DIST_DIR}/lib/${ARCHITECTURE}/)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/install.sh DESTINATION ${DIST_DIR})
+endif()
 
 #target_link_libraries(${PROJECT_NAME} "/usr/local/lib/librestclient-cpp.a")
 target_link_libraries(${PROJECT_NAME} PRIVATE stduuid SQLiteCpp)
@@ -72,15 +75,17 @@ target_link_libraries(${PROJECT_NAME} PRIVATE spdlog::spdlog spdlog::spdlog_head
 target_link_libraries(${PROJECT_NAME} PRIVATE nlohmann_json::nlohmann_json)
 #target_link_libraries(${PROJECT_NAME}  PRIVATE std::filesystem)
 
+if(UNIX)
 target_link_libraries(${PROJECT_NAME}_static PRIVATE stduuid SQLiteCpp)
 target_link_libraries(${PROJECT_NAME}_static PRIVATE restclient-cpp)
 target_link_libraries(${PROJECT_NAME}_static PRIVATE spdlog::spdlog spdlog::spdlog_header_only)
 target_link_libraries(${PROJECT_NAME}_static PRIVATE nlohmann_json::nlohmann_json)
+endif()
 
 if (WIN32)
 #find_library(VERSION_LIB version)
 target_link_libraries(${PROJECT_NAME} PRIVATE version.lib)
-target_link_libraries(${PROJECT_NAME}_static PRIVATE version.lib)
+#target_link_libraries(${PROJECT_NAME}_static PRIVATE version.lib)
 endif()
 
 if(UNIX)
