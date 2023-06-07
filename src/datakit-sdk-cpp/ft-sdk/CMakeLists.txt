@@ -7,6 +7,9 @@ project(ft-sdk VERSION 1.0.0 LANGUAGES CXX C)
 
 message(STATUS "VCPKG_SHARE_DIR=" ${VCPKG_CMAKE_SHARE})
 message(STATUS "libpath=" ${CMAKE_SYSTEM_LIBRARY_PATH})
+if(DEFINED ENV{BUILD_FROM_VCPKG})
+message(STATUS "got vcpkg!")
+endif()
 
 if(WIN32)
 add_definitions(-DFTSDK_EXPORTS)
@@ -15,6 +18,7 @@ add_definitions(/EHa)
 add_definitions(-D_WINDLL)
 add_definitions(-D_UNICODE)
 add_definitions(-DUNICODE)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++17")
 endif()
 
 set(DIST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../../datakit_sdk_redist")
