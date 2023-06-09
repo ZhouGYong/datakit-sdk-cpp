@@ -73,7 +73,7 @@ if (CMAKE_CROSSCOMPILING)
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 endif()
 
-if(DEFINED ENV{BUILD_FROM_VCPKG})
+if(DEFINED BUILD_FROM_VCPKG)
 message(STATUS "got vcpkg!")
 endif()
 
