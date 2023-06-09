@@ -25,7 +25,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${PROJECT_NAME}d.li
 endif()
 endif()
 
-set(DIST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../../datakit_sdk_redist")
+set(DIST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../../datakit_sdk_redist/${CMAKE_BUILD_TYPE}")
 set(CURL_DIR "${VCPKG_CMAKE_SHARE}/curl/")
 find_package(CURL CONFIG REQUIRED)
 set(stduuid_DIR "${VCPKG_CMAKE_SHARE}/stduuid/")
