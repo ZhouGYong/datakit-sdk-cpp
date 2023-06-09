@@ -20,9 +20,6 @@ add_definitions(-D_UNICODE)
 add_definitions(-DUNICODE)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++17")
 add_definitions(/std:c++17)
-if (CMAKE_BUILD_TYPE STREQUAL "Debug")
-set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${PROJECT_NAME}d.lib)
-endif()
 endif()
 
 set(DIST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../../datakit_sdk_redist/${CMAKE_BUILD_TYPE}")
@@ -51,6 +48,12 @@ message(STATUS "PROJECT_SOURCE_DIR=" ${PROJECT_SOURCE_DIR})
 AUX_SOURCE_DIRECTORY(${PROJECT_SOURCE_DIR} ALL_CPPs)
 
 add_library (${PROJECT_NAME} SHARED  ${ALL_CPPs})
+
+if(WIN32)
+  if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+    set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${PROJECT_NAME}d)
+  endif()
+endif()
 
 if(UNIX)
 add_library (${PROJECT_NAME}_static STATIC  ${ALL_CPPs})
