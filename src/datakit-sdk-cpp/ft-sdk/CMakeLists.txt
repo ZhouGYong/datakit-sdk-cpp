@@ -50,7 +50,7 @@ AUX_SOURCE_DIRECTORY(${PROJECT_SOURCE_DIR} ALL_CPPs)
 add_library (${PROJECT_NAME} SHARED  ${ALL_CPPs})
 
 if(WIN32)
-  if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+  if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
     set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${PROJECT_NAME}d)
   endif()
 endif()
