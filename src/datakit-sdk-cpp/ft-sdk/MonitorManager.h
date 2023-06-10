@@ -70,7 +70,7 @@ namespace com::ft::sdk::internal
 
 		std::map<std::string, MonitoredViewContainer*> m_mapViewContainer;
 
-		friend class Singleton;
+		ENABLE_SINGLETON();
 	};
 
 }
