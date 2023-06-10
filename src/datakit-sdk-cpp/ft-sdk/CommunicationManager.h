@@ -51,7 +51,7 @@ namespace com::ft::sdk::internal
 
 		std::map<std::string, std::string> m_headParams;
 
-		template<class T> friend class Singleton;
+		friend class Singleton;
 	};
 
 }

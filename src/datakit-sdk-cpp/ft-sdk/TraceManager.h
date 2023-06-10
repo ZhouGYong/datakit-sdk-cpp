@@ -76,7 +76,7 @@ namespace com::ft::sdk::internal
 
 		FTTraceConfig m_traceConfig;
 
-        template<class T> friend class Singleton;
+        friend class Singleton;
 	};
 
 }

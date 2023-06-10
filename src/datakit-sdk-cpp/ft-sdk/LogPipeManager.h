@@ -32,7 +32,7 @@ namespace com::ft::sdk::internal
 
 		const int LOG_LIMIT_SIZE = 30720;
 
-		template<class T> friend class Singleton;
+		friend class Singleton;
 	};
 
 }

@@ -36,7 +36,7 @@ namespace com::ft::sdk::internal
 		bool m_enableRUMCollect = true;
 		bool m_stopping = false;
 
-		template<class T> friend class Singleton;
+		friend class Singleton;
 	};
 
 }

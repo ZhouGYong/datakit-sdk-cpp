@@ -70,7 +70,7 @@ namespace com::ft::sdk::internal
 
 		std::map<std::string, MonitoredViewContainer*> m_mapViewContainer;
 
-		template<class T> friend class Singleton;
+		friend class Singleton;
 	};
 
 }

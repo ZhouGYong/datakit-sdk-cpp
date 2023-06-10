@@ -91,7 +91,7 @@ namespace com::ft::sdk::internal
 
 		bool m_enableSDKLog = false;
 
-		template<class T> friend class Singleton;
+		friend class Singleton;
 	};
 }
 

@@ -54,7 +54,7 @@ namespace com::ft::sdk::internal
 
 		const int INCREASING_NUMBER_MAX = 9999;
 
-		template<class T> friend class Singleton;
+		friend class Singleton;
 	};
 
 }

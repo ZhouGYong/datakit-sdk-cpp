@@ -89,7 +89,7 @@ namespace com::ft::sdk::internal
         std::int64_t m_lastActionTime = 0;
         std::map<std::string, RUMResource*> m_mapResource;
 
-        template<class T> friend class Singleton;
+        friend class Singleton;
     };
 
 }
