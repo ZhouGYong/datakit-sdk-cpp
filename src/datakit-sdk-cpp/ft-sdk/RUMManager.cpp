@@ -153,7 +153,17 @@ namespace com::ft::sdk::internal
 
     void RUMManager::addAction(std::string actionName, std::string actionType, std::int64_t duration, std::int64_t startTime)
     {
+        CHECK_SDK_CONDITION((m_pActiveView != nullptr), "View is required");
+        LoggerManager::getInstance().logDebug("add action:" + actionName + " , " + actionType);
 
+        checkSessionRefresh();
+        auto action = &(m_pActiveView->addAction(actionName, actionType));
+        action->close();
+        action->setStartTime(startTime);
+        action->setEndTime(startTime + duration);
+        this->m_lastActionTime = action->getStartTime();
+
+        flushRUMData();
     }
 
     void RUMManager::startAction(std::string actionName, std::string actionType)

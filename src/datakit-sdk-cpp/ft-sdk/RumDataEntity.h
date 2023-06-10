@@ -192,9 +192,19 @@ namespace com::ft::sdk::internal
 			m_isSynced = sync;
 		}
 
+		void setStartTime(std::int64_t startTime)
+		{
+			m_startTime = startTime;
+		}
+
 		std::int64_t getStartTime()
 		{
 			return m_startTime;
+		}
+
+		void setEndTime(std::int64_t endTime)
+		{
+			m_endTime = endTime;
 		}
 
 		std::int64_t getEndTime()

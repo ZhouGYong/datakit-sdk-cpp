@@ -17,7 +17,7 @@ namespace com::ft::sdk::constants
 	const std::string CONTENT_TYPE = "text/plain";
 	const std::string CHARSET = "UTF-8";
 	const std::string DEFAULT_APP_VERSION = "0.0.0";
-	const std::string DATAKIT_SDK_VERSION = "0.8.1";
+	const std::string DATAKIT_SDK_VERSION = "0.8.2";
 
 	const std::string URL_MODEL_TRACING = "/v1/write/tracing";//链路上传
 	const std::string URL_MODEL_LOG = "/v1/write/logging";//日志数据上传路径

@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "FTSDKFactory.h"
+#include "datakit-sdk-cpp/FTSDKFactory.h"
 #include "restclient-cpp/restclient.h"
 
 using namespace com::ft::sdk;

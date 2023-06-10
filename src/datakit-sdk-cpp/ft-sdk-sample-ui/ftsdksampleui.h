@@ -2,7 +2,7 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_ftsdksampleui.h"
-#include "FTSDKFactory.h"
+#include "datakit-sdk-cpp/FTSDKFactory.h"
 
 using namespace com::ft::sdk;
 

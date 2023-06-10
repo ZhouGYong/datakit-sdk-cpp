@@ -3,4 +3,7 @@ x64
 x86
 Debug
 Release
+build
+vcpkg_installed
+
 

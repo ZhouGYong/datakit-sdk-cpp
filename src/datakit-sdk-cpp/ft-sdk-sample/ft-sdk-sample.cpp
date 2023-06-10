@@ -80,6 +80,7 @@ int main()
     // 5. -- start testing rum entities
     sdk->startView("TEST_VIEW_ONE");
 
+    sdk->addAction("add action direct", "double_click", 120000000, 1669729979048581765);
     sdk->startAction("just4test", "click");
     sdk->addLongTask("test long task", 100010);
     sdk->addError("test error 1", "first error", RUMErrorType::NATIVE_CRASH, AppState::UNKNOWN);

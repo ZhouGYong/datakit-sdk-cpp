@@ -8,7 +8,7 @@ project(ft-sdk VERSION 1.0.0 LANGUAGES CXX C)
 message(STATUS "VCPKG_SHARE_DIR=" ${VCPKG_CMAKE_SHARE})
 message(STATUS "libpath=" ${CMAKE_SYSTEM_LIBRARY_PATH})
 if(DEFINED BUILD_FROM_VCPKG)
-message(STATUS "got vcpkg!")
+  message(STATUS "build from vcpkg!")
 endif()
 
 if(WIN32)
