@@ -52,7 +52,7 @@ namespace com::ft::sdk::internal
 		std::shared_ptr<SQLite::Database> m_pDB;
 		std::string DB_FILE = "";
 
-		friend class Singleton;
+		ENABLE_SINGLETON();
 	};
 
 }

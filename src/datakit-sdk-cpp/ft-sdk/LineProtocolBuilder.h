@@ -28,7 +28,7 @@ namespace com::ft::sdk::internal
 		void spitByNonEscapeChar(FieldMap& fields, const std::string& str, const char ch);
 		void decodeOneTag(TagMap& tags, const std::string& str);
 
-		friend class Singleton;
+		ENABLE_SINGLETON();
 	};
 }
 

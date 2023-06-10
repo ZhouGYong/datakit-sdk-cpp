@@ -76,7 +76,7 @@ namespace com::ft::sdk::internal
 
 		FTTraceConfig m_traceConfig;
 
-        friend class Singleton;
+        ENABLE_SINGLETON();
 	};
 
 }

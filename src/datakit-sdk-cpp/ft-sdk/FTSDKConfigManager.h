@@ -119,7 +119,7 @@ namespace com::ft::sdk::internal
 		std::string m_configFilePath;
 		std::string m_workingDir;
 
-		friend class Singleton;
+		ENABLE_SINGLETON();
 	};
 
 }

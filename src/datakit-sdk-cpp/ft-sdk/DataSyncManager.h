@@ -88,7 +88,7 @@ namespace com::ft::sdk::internal
 
 		bool m_enableFileCache = false;
 
-		friend class Singleton;
+		ENABLE_SINGLETON();
 	};
 
 }

@@ -97,7 +97,7 @@ namespace com::ft::sdk::internal
         std::string m_component = "";
         bool m_enableLog = false;
 
-        friend class Singleton;
+        ENABLE_SINGLETON();
     };
 
 }
