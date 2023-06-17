@@ -106,3 +106,24 @@ elseif(WIN32)
 endif()
 
 
+if(UNIX)
+include(CMakePackageConfigHelpers)
+configure_package_config_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/config.cmake.in
+	${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake
+	INSTALL_DESTINATION ${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}
+	NO_SET_AND_CHECK_MACRO)
+write_basic_package_version_file(
+	${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake
+	VERSION 1.0.0
+	COMPATIBILITY SameMajorVersion)
+install(
+	FILES
+		${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake
+		${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake
+	DESTINATION
+		${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME})
+install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}-targets)
+install(EXPORT ${PROJECT_NAME}-targets
+	NAMESPACE ${PROJECT_NAME}::
+	DESTINATION ${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME})
+endif()
