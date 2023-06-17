@@ -110,7 +110,7 @@ if(UNIX AND (DEFINED BUILD_FROM_VCPKG))
 include(CMakePackageConfigHelpers)
 configure_package_config_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/config.cmake.in
 	${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake
-	INSTALL_DESTINATION ${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}
+	INSTALL_DESTINATION ${DIST_DIR}/cmake
 	NO_SET_AND_CHECK_MACRO)
 write_basic_package_version_file(
 	${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake
@@ -121,8 +121,8 @@ install(
 		${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake
 		${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake
 	DESTINATION
-		${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME})
+		${DIST_DIR}/cmake)
 install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}-targets)
 install(EXPORT ${PROJECT_NAME}-targets
-	DESTINATION ${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME})
+	DESTINATION ${DIST_DIR}/cmake)
 endif()
