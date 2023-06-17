@@ -7,9 +7,6 @@ project(ft-sdk VERSION 1.0.0 LANGUAGES CXX C)
 
 message(STATUS "VCPKG_SHARE_DIR=" ${VCPKG_CMAKE_SHARE})
 message(STATUS "libpath=" ${CMAKE_SYSTEM_LIBRARY_PATH})
-if(DEFINED BUILD_FROM_VCPKG)
-  message(STATUS "build from vcpkg!")
-endif()
 
 if(WIN32)
 add_definitions(-DFTSDK_EXPORTS)
@@ -67,9 +64,13 @@ add_dependencies(${PROJECT_NAME} auto_gen_app_uuid)
 add_dependencies(${PROJECT_NAME}_static auto_gen_app_uuid)
 endif()
 
+
 target_include_directories(${PROJECT_NAME} PRIVATE "/usr/local/include/")
 target_include_directories(${PROJECT_NAME} PRIVATE "/usr/include/")
+
+if(NOT (DEFINED BUILD_FROM_VCPKG))
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Include/)
+endif()
 
 install(TARGETS ${PROJECT_NAME} DESTINATION ${DIST_DIR}/lib/${ARCHITECTURE}/)
 install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Include/ DESTINATION ${DIST_DIR}/include)
@@ -105,8 +106,7 @@ elseif(WIN32)
   set(TARGET_FOLDER "$(OutDir)")  # Use MSVC's $(OutDir) for dynamic copying
 endif()
 
-
-if(UNIX)
+if(UNIX AND (DEFINED BUILD_FROM_VCPKG))
 include(CMakePackageConfigHelpers)
 configure_package_config_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/config.cmake.in
 	${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake
@@ -124,6 +124,5 @@ install(
 		${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME})
 install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}-targets)
 install(EXPORT ${PROJECT_NAME}-targets
-	NAMESPACE ${PROJECT_NAME}::
 	DESTINATION ${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME})
 endif()
